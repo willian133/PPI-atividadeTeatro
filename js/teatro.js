@@ -139,11 +139,10 @@ frm.btDeleteOcupada.addEventListener("click", (e) => {
         frm.inPoltrona.focus();
         return;
     }
+    //confirmação
+    if(!confirm("Deseja realmente remover a reserva ocupada"))return;
 
-
-    console.log(ocupadas)
     ocupadas.splice(ocupadas.indexOf(poltrona.toString()), 1);
-    console.log(ocupadas)
 
     const imgPoltrona = dvPalco.querySelectorAll("img")[poltrona-1];
     imgPoltrona.src = "img/disponivel.jpg";//modifica a imagem
